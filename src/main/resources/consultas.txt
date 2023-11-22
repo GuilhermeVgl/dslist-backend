@@ -1,0 +1,4 @@
+SELECT game.title, tbList.name
+From tb_game game
+JOIN tb_belonging tbBelonging on (tbBelonging.game_id = game.id)
+JOIN tb_game_list tbList on (tbBelonging.list_id = tbList.id)

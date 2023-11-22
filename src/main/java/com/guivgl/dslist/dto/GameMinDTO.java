@@ -1,10 +1,11 @@
 package com.guivgl.dslist.dto;
 
 import com.guivgl.dslist.entities.Game;
+import com.guivgl.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
-    private Integer id;
+    private Long id;
     private String title;
     private Integer year;
     private String imgUrl;
@@ -21,7 +22,17 @@ public class GameMinDTO {
         shortDescription = entity.getShortDescription();
     }
 
-    public Integer getId() {
+    public GameMinDTO(GameMinProjection projection)
+    {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+    }
+
+
+    public Long getId() {
         return id;
     }
 
